@@ -1,0 +1,57 @@
+DSA 
+
+07-07
+
+# imp DSA in computer science and programming.
+
+-Optimized Performance: Efficient data structures and algorithms improve the 
+  performance of software by making operations like searching, sorting,
+ and accessing data faster.
+-Efficient algorithms help in managing and utilizing resources such as
+ CPU time and memory effectively.
+-Learning DSA improves analytical thinking and problem-solving skills,
+ enabling programmers to think logically about problem decomposition.
+-Foundations for Advanced Topics such as artificial intelligence,
+ machine learning, and robotics
+-Understanding DSA helps in debugging and optimizing existing code, making
+ it more robust and efficient.
+-Writing efficient code often depends on choosing the right data structures and algorithms,
+ leading to better code quality and maintainability.
+-Everyday Applications: DSA concepts are used in real-world applications
+ such as search engines,
+ social networks, and recommendation systems.
+- solid understanding of DSA helps in quickly learning and adapting to
+ new programming languages,
+ frameworks, and technologies, as the core principles remain consistent.
+
+
+# Dive into arrays, their properties, and operations.
+1) insert and delete the element in the array
+-- to insert and delete the element we have to create a new array
+   (for deletion it's ok to not display last element)
+   but if we have to insert new element in full array after
+ insertion last indexed element will not get seen.
+
+# memory allocation in Array in Stack and heap
+
+-Declaration: Defines the type and identifier of the array.
+-Instantiation: Allocates memory in the heap using the new keyword.
+-Initialization: Assigns values to the elements of the array.
+-Arrays in Java are stored in contiguous memory locations in the heap,
+ with a reference to the array object stored in the stack.
+-Multi-dimensional arrays are arrays of arrays, with each sub-array allocated separately in the heap.
+
+
+#Array Advantages and disadvantages
+
+Arrays are a powerful tool for storing and accessing data efficiently,
+ particularly when the number of elements is known in advance and does not change.
+ They provide fast, direct access to elements and are simple to use and understand.
+ However, their fixed size, inefficiency in insertion and deletion,
+ and requirement for homogeneous elements can be limiting. 
+
+
+
+
+
+
