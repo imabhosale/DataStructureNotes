@@ -50,6 +50,233 @@ Arrays are a powerful tool for storing and accessing data efficiently,
  However, their fixed size, inefficiency in insertion and deletion,
  and requirement for homogeneous elements can be limiting. 
 
+---------------------------------------------------------------------------------------------------------------------------
+08-07-24
+
+LinkedList implementation operations like insert at front . middle, end
+remove element at front, end , middle
+
+--------------------------------------------------------------------------
+
+
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+
+    Node() {
+        this.data = 0;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    Node head = null;
+    Node tail = null;
+
+    // Insert into Linked List
+    public Node append(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            tail = head;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        return head;
+    }
+
+    // Insert at middle when data and position of index is given
+    public Node insertAt(int data, int index) {
+        Node newNode = new Node(data);
+
+        if (index == 0) {
+            newNode.next = head;
+            head = newNode;
+            if (tail == null) {
+                tail = newNode;
+            }
+            return head;
+        }
+
+        Node current = head;
+        int count = 0;
+        while (current != null && count < index - 1) {
+            current = current.next;
+            count++;
+        }
+
+        if (current == null) {
+            System.out.println("Index out of bounds");
+            return head;
+        }
+
+        newNode.next = current.next;
+        current.next = newNode;
+        if (newNode.next == null) {
+            tail = newNode;
+        }
+
+        return head;
+    }
+
+    // Insert in front of the Linked List
+    public Node insertAtFront(int data) {
+        Node newNode = new Node(data);
+        newNode.next = head;
+        head = newNode;
+        if (tail == null) {
+            tail = newNode;
+        }
+        return head;
+    }
+
+    // Display the Linked List
+    public void display() {
+        if (head == null) {
+            System.out.println("Empty Linked List");
+            return;
+        }
+        Node current = head;
+        System.out.println("Displaying Linked List:");
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
+    // Delete the last node
+    public Node deleteAtLast() {
+        if (head == null) {
+            System.out.println("Empty Linked List");
+            return head;
+        }
+
+        if (head.next == null) {
+            head = null;
+            tail = null;
+            return head;
+        }
+
+        Node current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+
+        current.next = null;
+        tail = current;
+
+        return head;
+    }
+
+    // Delete node at a specific position
+    public Node deleteAt(int posi) {
+        if (head == null) {
+            System.out.println("Empty Linked List");
+            return head;
+        }
+
+        if (posi == 0) {
+            head = head.next;
+            if (head == null) {
+                tail = null;
+            }
+            return head;
+        }
+
+        int count = 0;
+        Node current = head;
+        while (current != null && count < posi - 1) {
+            current = current.next;
+            count++;
+        }
+
+        if (current == null || current.next == null) {
+            System.out.println("Position out of bounds");
+            return head;
+        }
+
+        current.next = current.next.next;
+        if (current.next == null) {
+            tail = current;
+        }
+
+        return head;
+    }
+
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList();
+        list.display();
+        list.append(10);
+        list.append(20);
+        list.append(30);
+        list.append(140);
+        list.append(109);
+
+        list.display();
+
+        list.insertAt(15, 0); // Insert at beginning
+        list.insertAt(25, 2); // Insert at index 2
+
+        list.display();
+
+        list.insertAtFront(5); // Insert at the front
+        list.display();
+
+        list.deleteAtLast(); // Delete the last node
+        list.display();
+
+        list.deleteAt(2); // Delete node at index 2
+        list.display();
+    }
+}
+
+
+
+----------------------------------------------------------------------------------------
+
+
+imp questions
+
+1)Reverse the LL
+2)delete the node in LL without given the head and (deleted node will not be last node)
+3)middle of the LL (fast and slow pointer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
