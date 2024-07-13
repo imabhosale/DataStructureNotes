@@ -247,8 +247,8 @@ imp questions
 1)Reverse the LL
 2)delete the node in LL without given the head and (deleted node will not be last node)
 3)middle of the LL (fast and slow pointer)
-
-
+4)cycle detection , length of the cycle, starting of cycle
+5) remove duplicate in LL
 
 
 
